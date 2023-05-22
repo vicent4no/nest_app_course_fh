@@ -38,5 +38,5 @@ export class Product implements IProduct {
     (productImage) => productImage.product,
     { cascade: true },
   )
-  productImages?: ProductImage;
+  productImages?: ProductImage[];
 }
