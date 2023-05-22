@@ -8,8 +8,8 @@ import {
   IsString,
   MinLength,
 } from 'class-validator';
-import { AvailableGenders } from 'src/common/constants/available-genders.constant';
-import { IProduct } from 'src/common/interfaces/products/product.interface';
+import { AvailableGenders, Sizes } from 'src/common/constants';
+import { IProduct } from 'src/common/interfaces';
 
 export class CreateProductDto implements IProduct {
   @Type(() => String)
@@ -42,8 +42,8 @@ export class CreateProductDto implements IProduct {
 
   @Type(() => Array)
   @IsArray()
-  @IsString({ each: true })
-  sizes: string[];
+  @IsEnum(Sizes, { each: true })
+  sizes: Sizes[];
 
   @Type(() => String)
   @IsEnum(AvailableGenders)
