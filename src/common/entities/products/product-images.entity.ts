@@ -5,7 +5,7 @@ import { Product } from './product.entity';
 @Entity()
 export class ProductImage implements IProductImage {
   @PrimaryGeneratedColumn()
-  id?: number | undefined;
+  id: number;
 
   @Column('text')
   url: string;
